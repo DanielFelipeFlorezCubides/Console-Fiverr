@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { connectDB, client } from './config/db.js';
 import mostrarMenuClientes from './commands/clienteCommand.js';
+import mostrarMenuPropuestas from './commands/propuestaCommand.js';
 
 console.clear();
 console.log(chalk.green.bold('🚀 Bienvenido a Console-Fiverr\n'));
@@ -30,6 +31,9 @@ while (!salir) {
     switch (modulo) {
         case 'clientes':
             await mostrarMenuClientes();
+            break;
+        case 'propuestas':
+            await mostrarMenuPropuestas();
             break;
         case 'salir':
             salir = true;
