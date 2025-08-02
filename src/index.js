@@ -5,6 +5,7 @@ import mostrarMenuClientes from './commands/clienteCommand.js';
 import mostrarMenuPropuestas from './commands/propuestaCommand.js';
 import mostrarMenuProyectos from './commands/proyectoCommand.js';
 import mostrarMenuContratos from './commands/contratoCommand.js';
+import mostrarMenuEntregables from './commands/entregableCommand.js';
 
 console.clear();
 console.log(chalk.green.bold('🚀 Bienvenido a Console-Fiverr\n'));
@@ -19,13 +20,16 @@ while (!salir) {
             name: 'modulo',
             message: chalk.cyanBright('¿Qué módulo deseas gestionar?'),
             choices: [
+                new inquirer.Separator(' 🔽 Selecciona un módulo para gestionar 🔽 '),
                 { name: '👥 Clientes', value: 'clientes' },
                 { name: '📑 Propuestas', value: 'propuestas' },
                 { name: '🏗️ Proyectos', value: 'proyectos' },
                 { name: '📜 Contratos', value: 'contratos' },
+                { name: '📦 Entregables', value: 'entregables' },
                 { name: '💰 Finanzas', value: 'finanzas' },
                 new inquirer.Separator(),
-                { name: '❌ Salir', value: 'salir' }
+                { name: '❌ Salir', value: 'salir' },
+                new inquirer.Separator()
             ]
         }
     ]);
@@ -43,7 +47,9 @@ while (!salir) {
         case 'contratos':
             await mostrarMenuContratos();
             break;
-
+        case 'entregables':
+            await mostrarMenuEntregables();
+            break;
         case 'salir':
             salir = true;
             break;
@@ -53,4 +59,4 @@ while (!salir) {
 }
 
 await client.close();
-console.log(chalk.green('👋 Aplicación finalizada correctamente.'));
+console.log(chalk.green('👋 Sigue dandola toda hermano 🔥.'));
