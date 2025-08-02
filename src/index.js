@@ -3,6 +3,7 @@ import inquirer from 'inquirer';
 import { connectDB, client } from './config/db.js';
 import mostrarMenuClientes from './commands/clienteCommand.js';
 import mostrarMenuPropuestas from './commands/propuestaCommand.js';
+import mostrarMenuProyectos from './commands/proyectoCommand.js';
 
 console.clear();
 console.log(chalk.green.bold('🚀 Bienvenido a Console-Fiverr\n'));
@@ -34,6 +35,9 @@ while (!salir) {
             break;
         case 'propuestas':
             await mostrarMenuPropuestas();
+            break;
+        case 'proyectos':
+            await mostrarMenuProyectos();
             break;
         case 'salir':
             salir = true;
