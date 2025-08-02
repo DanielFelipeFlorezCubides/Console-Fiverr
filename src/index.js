@@ -4,6 +4,7 @@ import { connectDB, client } from './config/db.js';
 import mostrarMenuClientes from './commands/clienteCommand.js';
 import mostrarMenuPropuestas from './commands/propuestaCommand.js';
 import mostrarMenuProyectos from './commands/proyectoCommand.js';
+import mostrarMenuContratos from './commands/contratoCommand.js';
 
 console.clear();
 console.log(chalk.green.bold('🚀 Bienvenido a Console-Fiverr\n'));
@@ -21,7 +22,7 @@ while (!salir) {
                 { name: '👥 Clientes', value: 'clientes' },
                 { name: '📑 Propuestas', value: 'propuestas' },
                 { name: '🏗️ Proyectos', value: 'proyectos' },
-                { name: '📦 Entregables', value: 'entregables' },
+                { name: '📜 Contratos', value: 'contratos' },
                 { name: '💰 Finanzas', value: 'finanzas' },
                 new inquirer.Separator(),
                 { name: '❌ Salir', value: 'salir' }
@@ -39,6 +40,10 @@ while (!salir) {
         case 'proyectos':
             await mostrarMenuProyectos();
             break;
+        case 'contratos':
+            await mostrarMenuContratos();
+            break;
+
         case 'salir':
             salir = true;
             break;
