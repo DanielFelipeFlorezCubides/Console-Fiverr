@@ -6,6 +6,7 @@ import mostrarMenuPropuestas from './commands/propuestaCommand.js';
 import mostrarMenuProyectos from './commands/proyectoCommand.js';
 import mostrarMenuContratos from './commands/contratoCommand.js';
 import mostrarMenuEntregables from './commands/entregableCommand.js';
+import mostrarMenuFinanzas from './commands/finanzaCommand.js';
 
 console.clear();
 console.log(chalk.green.bold('🚀 Bienvenido a Console-Fiverr\n'));
@@ -50,6 +51,9 @@ while (!salir) {
         case 'entregables':
             await mostrarMenuEntregables();
             break;
+        case 'finanzas':
+            await mostrarMenuFinanzas();
+            break;
         case 'salir':
             salir = true;
             break;
@@ -59,4 +63,4 @@ while (!salir) {
 }
 
 await client.close();
-console.log(chalk.green('👋 Sigue dandola toda hermano 🔥.'));
+console.log(chalk.green('👋 Sigue dándola toda hermano 🔥.'));
