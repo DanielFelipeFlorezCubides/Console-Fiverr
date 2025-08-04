@@ -23,6 +23,7 @@
     "dayjs": "^1.11.13",
     "dotenv": "^17.2.1",
     "inquirer": "^12.9.0",
+    "json2csv": "^6.0.0-alpha.2",
     "mongodb": "^6.18.0"
   }
 }

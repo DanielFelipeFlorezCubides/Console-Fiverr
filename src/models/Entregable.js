@@ -1,16 +1,29 @@
 class Entregable {
-    constructor({ proyectoId, descripcion, fechaLimite, estado = 'pendiente' }) {
-      if (!proyectoId || typeof proyectoId !== 'string') throw new Error("ID de proyecto inválido");
-      if (!descripcion || typeof descripcion !== 'string') throw new Error("Descripción inválida");
-      if (!fechaLimite || isNaN(Date.parse(fechaLimite))) throw new Error("Fecha límite inválida");
-      if (!['pendiente', 'entregado', 'aprobado', 'rechazado'].includes(estado)) throw new Error("Estado inválido");
-  
-      this.proyectoId = proyectoId;
-      this.descripcion = descripcion;
-      this.fechaLimite = new Date(fechaLimite);
-      this.estado = estado;
-      this.creadoEn = new Date();
+  constructor({ proyectoId, descripcion, fechaLimite, estado = 'pendiente' }) {
+    if (!proyectoId || typeof proyectoId !== 'string') {
+      throw new Error('El proyectoId es obligatorio y debe ser un string válido.');
     }
+
+    if (!descripcion || typeof descripcion !== 'string') {
+      throw new Error('La descripción del entregable es obligatoria y debe ser texto.');
+    }
+
+    const fecha = new Date(`${fechaLimite}T12:00:00`); // para evitar timezone issues
+    if (isNaN(fecha)) {
+      throw new Error('La fecha límite es inválida.');
+    }
+
+    const estadosValidos = ['pendiente', 'entregado', 'aprobado', 'rechazado'];
+    if (!estadosValidos.includes(estado)) {
+      throw new Error(`El estado debe ser uno de: ${estadosValidos.join(', ')}`);
+    }
+
+    this.proyectoId = proyectoId;
+    this.descripcion = descripcion;
+    this.fechaLimite = fecha;
+    this.estado = estado;
+    this.creadoEn = new Date();
   }
-  
-  export default Entregable;  
+}
+
+export default Entregable;
