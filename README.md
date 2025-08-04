@@ -123,3 +123,6 @@ Plantilla creada bajo requerimientos académicos/profesionales para gestión de 
 ## 🧩 Licencia
 
 Este proyecto es de código abierto y puede ser usado con fines educativos o personales.
+
+## 🎥 Video aclaratorio
+https://drive.google.com/file/d/1cqdZ1mrUQvPNVf-xOMinxOT1XeT2I3Ql/view?usp=sharing
