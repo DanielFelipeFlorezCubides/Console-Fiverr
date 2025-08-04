@@ -125,4 +125,4 @@ Plantilla creada bajo requerimientos académicos/profesionales para gestión de 
 Este proyecto es de código abierto y puede ser usado con fines educativos o personales.
 
 ## 🎥 Video aclaratorio
-https://drive.google.com/file/d/1cqdZ1mrUQvPNVf-xOMinxOT1XeT2I3Ql/view?usp=sharing
+https://drive.google.com/file/d/1wrzFBqe9RQEwBXYdHBPwUFiqi374VrEc/view?usp=sharing
