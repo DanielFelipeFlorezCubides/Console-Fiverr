@@ -47,6 +47,37 @@ class FinanzaRepository {
             .toArray();
     }
 
+    async obtenerIngresosPorProyecto(proyectoId) {
+        const result = await this.collection.aggregate([
+            { $match: { proyectoId } },
+            {
+                $group: {
+                    _id: '$tipo',
+                    total: { $sum: '$monto' }
+                }
+            }
+        ]).toArray();
+
+        const ingreso = result.find(r => r._id === 'ingreso')?.total || 0;
+
+        return ingreso;
+    }
+
+    async obtenerEgresosPorProyecto(proyectoId) {
+        const result = await this.collection.aggregate([
+            { $match: { proyectoId } },
+            {
+                $group: {
+                    _id: '$tipo',
+                    total: { $sum: '$monto' }
+                }
+            }
+        ]).toArray();
+
+        const egreso = result.find(r => r._id === 'egreso')?.total || 0;
+
+        return egreso;
+    }
     async obtenerBalancePorProyecto(proyectoId) {
         const result = await this.collection.aggregate([
             { $match: { proyectoId } },

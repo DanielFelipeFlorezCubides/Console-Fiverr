@@ -126,3 +126,13 @@ Este proyecto es de código abierto y puede ser usado con fines educativos o per
 
 ## 🎥 Video aclaratorio
 https://drive.google.com/file/d/1wrzFBqe9RQEwBXYdHBPwUFiqi374VrEc/view?usp=sharing
+
+## Documentacion del examen de nodejs
+### Generar resumen financiero por cliente
+Los freelancers necesitan visualizar el estado financiero de cada cliente de forma clara y rápida.
+Implementa un comando que, dado el nombre o ID de un cliente, consulte toda la inforamción financiera relacionada y muestre un resumen con los siguientes datos:
+- Total de ingresos asociados al cliente.
+- Total de egresos asociados al cliente.
+- Balance neto calculado como ingresos menos egresos.
+
+Este resumen debe utilizar operaciones de agregación en MOngoDB, y su presentación en consola debe ser limpia, clara y profesional, utilizando herramientas como chalk, table, ora, u otras que mejoren la experiencia de usuario.

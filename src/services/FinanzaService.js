@@ -31,10 +31,28 @@ class FinanzaService {
         return await this.repo.listarPorRango(fechaInicio, fechaFin);
     }
 
+    async obtenerIngresos(proyectoId) {
+        const proyecto = await this.proyectoRepo.buscarPorId(proyectoId);
+        if (!proyecto) {
+            throw new Error('Proyecto asociado a tu cliente no encontrado.');
+        }
+
+        return await this.repo.obtenerIngresosPorProyecto(proyectoId);
+    }
+    
+    async obtenerEgresos(proyectoId) {
+        const proyecto = await this.proyectoRepo.buscarPorId(proyectoId);
+        if (!proyecto) {
+            throw new Error('Proyecto asociado a tu cliente no encontrado.');
+        }
+
+        return await this.repo.obtenerEgresosPorProyecto(proyectoId);
+    }
+
     async obtenerBalance(proyectoId) {
         const proyecto = await this.proyectoRepo.buscarPorId(proyectoId);
         if (!proyecto) {
-            throw new Error('Proyecto no encontrado.');
+            throw new Error('Proyecto asociado a tu cliente no encontrado.');
         }
 
         return await this.repo.obtenerBalancePorProyecto(proyectoId);
